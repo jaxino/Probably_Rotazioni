@@ -33,6 +33,9 @@ ProbablyEngine.rotation.register_custom(255, "Survival", {
 -- 19801	Tranquilizing Shot
 -- 117050	Glaive Toss
 
+-- Racials
+{"33697"},-- Blood Fury
+
 	-- Auto Target
 		{ "/cleartarget", {
 			"toggle.autotarget", 
@@ -42,13 +45,8 @@ ProbablyEngine.rotation.register_custom(255, "Survival", {
 		{ "/targetenemy [noexists]", { "toggle.autotarget", "!target.exists" }},
    		{ "/targetenemy [dead]", { "toggle.autotarget", "target.exists", "target.dead" }},
 
--- Interrupst
-{"147362",{"target.interruptAt(20)","modifier.interrupt"},"target"}, -- Counter Shot
-
--- Cooldowns
-{{
-	{"33697"},-- Blood Fury
-},"toggle.cooldowns"},
+-- Interrupts
+{"!147362",{"target.interruptAt(20)","modifier.interrupt"},"target"}, -- Counter Shot
 
 -- Aggro
 {"5384", "player.aggro >= 100" }, -- Feing Death
@@ -58,14 +56,15 @@ ProbablyEngine.rotation.register_custom(255, "Survival", {
 -- Traps
 --{"82939",{"modifier.lshift","player.buff(77769)"},"target.ground"}, -- Explosive Trap
 --{"60192",{"modifier.lcontrol","player.buff(77769)"},"target.ground"}, -- Freezing Trap
---{"82939",{"modifier.lalt","player.buff(77769)"},"target.ground"}, -- Ice Trap
+{"82939",{"modifier.lalt","player.buff(77769)"},"mouseover.ground"}, -- Ice Trap
 
+-- Movement
 {"!781",{"modifier.lshift"}},
+
+{"!19801",{"dispellable(19801)","toggle.dispell"},"target"}, --Tranquilizing Shot
 
 -- AoE
 {{
-	{"!19801",{"tranquilizing"},"target"}, --Tranquilizing Shot
-	{"!19801",{"dispellable(19801)","toggle.dispell"},"target"}, --Tranquilizing Shot
 	{"82939",{"player.buff(77769)"},"target.ground"}, -- Explosive Trap
 	{"3674"}, -- Black Arrow
 	{"53301"}, -- Explosive Shot
@@ -105,12 +104,9 @@ ProbablyEngine.rotation.register_custom(255, "Survival", {
 		{"2643",{"player.focus > 70"},"target"}, -- Multi-Shot dump focus
 	},"talent(6,1)"},
 	{"77767",{"player.focus < 70"},"target"}, -- Cobra Shot
-	{"77767"}, -- Cobra Shot
 },"target.area(20).enemies > 3"},
 
 -- Single Target
-{"!19801",{"tranquilizing"},"target"}, -- Tranquilizing Shot
-{"!19801",{"dispellable(19801)","toggle.dispell"},"target"}, --Tranquilizing Shot
 {"3674"}, -- Black Arrow
 {"53301"}, -- Explosive Shot
 {"53301",{"player.buff(168980)"},"target"}, -- Explosive Shot
@@ -129,7 +125,6 @@ ProbablyEngine.rotation.register_custom(255, "Survival", {
 	{"3044",{"player.focus > 70"},"target"}, -- Arcane Shot dump focus
 },"talent(6,1)"},
 {"77767",{"player.focus < 70"},"target"}, -- Cobra Shot
-{"77767"}, -- Cobra Shot
 
 
 },{
