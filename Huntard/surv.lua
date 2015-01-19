@@ -1,16 +1,3 @@
---[[
-Questo è da aggiungere a Probably.system.condition.core.lua
-
-ProbablyEngine.condition.register("tranquilizing", function(target, spell)
-	local buff,_,_,_, dispelType = UnitAura(target, spell)
-    if buff and dispelType == '' or dispelType == 'Magic' then
-    return true
-    end
-    return false
-end)
-
-]]
-
 ProbablyEngine.rotation.register_custom(255, "Survival", {
 -- IN COMBAT --
 
