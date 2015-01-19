@@ -61,7 +61,7 @@ ProbablyEngine.rotation.register_custom(255, "Survival", {
 -- Movement
 {"!781",{"modifier.lshift"}},
 
-{"!19801",{"dispellable(19801)","toggle.dispell"},"target"}, --Tranquilizing Shot
+{"!19801",{"dispellable(19801)","toggle.dispell","target.state.purge"},"target"}, --Tranquilizing Shot
 
 -- AoE
 {{
