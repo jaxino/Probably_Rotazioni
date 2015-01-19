@@ -1,0 +1,20 @@
+## Interface: 60000
+## Title: Probably - Rotazioni
+## Notes: PE Custom Rotations
+## Dependencies: Probably
+
+-- Rotations
+
+DK\blood.lua
+DK\unholy.lua
+Dudu\guardian.lua
+Huntard\surv.lua
+Monk\mist.lua
+Palazor\holy.lua
+Palazor\prot.lua
+Priest\disc.lua
+Shammy\restoration.lua
+Warrior\arms.lua
+Warrior\protection.lua
+
+
